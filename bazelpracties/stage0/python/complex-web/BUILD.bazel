@@ -1,0 +1,16 @@
+load("@python_deps//:requirements.bzl", "requirement")
+py_binary(
+    name = "main",
+    deps = [
+        # 引入自己的python包，注意：源BUIlD文件的visibili要是public
+        "//python/calculator:calculator",
+        requirement("blinker"),
+        requirement("werkzeug"),
+        requirement("markupsafe"),
+        requirement("jinja2"),
+        requirement("click"),
+        requirement("itsdangerous"),
+        requirement("Flask")
+    ],
+    srcs = ["main.py"],
+)

@@ -1,7 +1,8 @@
 py_library(
     name = "calculator",
     srcs = ["calculator.py"],
-    # visibility = [""],
+    # 为complex-web打开交叉引用
+    visibility = ["//visibility:public"],
 )
 
 py_test(
