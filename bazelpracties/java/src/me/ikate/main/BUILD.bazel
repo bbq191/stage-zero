@@ -2,4 +2,5 @@ java_binary(
     name = "main",
     srcs = ["Main.java"],
     main_class = "me.ikate.main.Main",
+    deps = ["//java/src/me/ikate/greeter"],
 )
