@@ -1,7 +1,16 @@
-pub fn add() {
-    println!("quick")
+const DEFAULT_CAPCITY: i32 = 10;
+
+struct array_list {
+    size: i32,
+    elements: [i32; 10],
 }
 
-pub fn remove(index: i32) -> bool {
-    return true;
+impl array_list {
+    pub fn add() {
+        println!("quick")
+    }
+
+    pub fn get(index: i32) -> i32 {
+        return;
+    }
 }
