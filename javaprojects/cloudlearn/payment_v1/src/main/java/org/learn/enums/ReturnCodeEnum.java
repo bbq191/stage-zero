@@ -1,4 +1,4 @@
-package org.learn.resp;
+package org.learn.enums;
 
 import lombok.Getter;
 
