@@ -27,7 +27,7 @@ public class PayController {
     return ResultData.success("成功返回记录，返回值" + i);
   }
 
-  @DeleteMapping(value = "/pau/del/{id}")
+  @DeleteMapping(value = "/pay/del/{id}")
   @Operation(summary = "删除", description = "删除支付流水方法")
   public ResultData<Integer> deletePay(@PathVariable("id") Integer id) {
     int i = payService.delete(id);
