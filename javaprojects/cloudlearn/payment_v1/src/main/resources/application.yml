@@ -4,8 +4,15 @@ server:
 # ==========applicationName + druid-mysql8 driver===================
 spring:
   application:
-    name: cloud-payment-service
-
+    name: payment-service
+  ####Spring Cloud Consul for Service Discovery
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true #优先使用服务ip进行注册
+        service-name: ${spring.application.name}
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
