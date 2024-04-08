@@ -36,7 +36,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
         <!--web + actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

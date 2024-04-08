@@ -3,10 +3,12 @@ package org.learn;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableDiscoveryClient // 服务注册和发现
+@RefreshScope // 动态刷新
 @MapperScan("org.learn.mapper")
 public class Payment_v1 {
   public static void main(String[] args) {

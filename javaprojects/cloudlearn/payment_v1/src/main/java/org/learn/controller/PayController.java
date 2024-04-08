@@ -9,6 +9,7 @@ import org.learn.entities.Pay;
 import org.learn.entities.PayDTO;
 import org.learn.resp.ResultData;
 import org.learn.service.PayService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -54,5 +55,13 @@ public class PayController {
   @Operation(summary = "查所有流水", description = "查询所有支付流水方法")
   public ResultData<List<Pay>> getAll() {
     return ResultData.success(payService.getAll());
+  }
+
+  @Value("${server.port}")
+  private String port;
+
+  @GetMapping(value = "/pay/get/info")
+  private String getInfoByConsul(@Value("${payment.info}") String paymentInfo) {
+    return "paymentInfo: " + paymentInfo + "\t" + "port: " + port;
   }
 }

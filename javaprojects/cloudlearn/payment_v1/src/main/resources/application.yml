@@ -3,22 +3,14 @@ server:
 
 # ==========applicationName + druid-mysql8 driver===================
 spring:
-  application:
-    name: payment-service
-  ####Spring Cloud Consul for Service Discovery
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        prefer-ip-address: true #优先使用服务ip进行注册
-        service-name: ${spring.application.name}
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/cloudlearn?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
     username: root
     password:
+  profiles:
+    active: dev # 多环境配置加载内容dev/prod,不写就是默认default配置
 
 # ========================mybatis===================
 mybatis:
