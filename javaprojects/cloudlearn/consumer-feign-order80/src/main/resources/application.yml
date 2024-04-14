@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-consumer-openfeign-order
+    name: consumer-openfeign-order
   ####Spring Cloud Consul for Service Discovery
   cloud:
     consul:
