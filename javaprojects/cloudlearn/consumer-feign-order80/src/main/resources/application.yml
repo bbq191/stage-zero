@@ -12,3 +12,28 @@ spring:
       discovery:
         prefer-ip-address: true #优先使用服务ip进行注册
         service-name: ${spring.application.name}
+    openfeign:
+      client:
+        config:
+          payment-service:
+            #连接超时时间
+            connectTimeout: 3000
+            #读取超时时间
+            readTimeout: 3000
+      httpclient: #  Apache HttpClient5 配置开启
+        hc5:
+          enabled: true
+      compression: # gzip 压缩
+        request:
+          enabled: true
+          min-request-size: 2048 #最小触发压缩的大小
+          mime-types: text/xml,application/xml,application/json #触发压缩数据类型
+        response:
+          enabled: true
+# openfeign 日志监控
+logging:
+  level:
+    ikate:
+      me:
+        api:
+          PayFeignApi: debug
